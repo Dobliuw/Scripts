@@ -21,7 +21,7 @@ trap ctrl_c INT
 
 # Global variables
 url="https://api.openai.com/v1/chat/completions"
-api_key=$(echo "c2stV2NrNWpvWm5sNFd5OENkS3NFUzdUM0JsYmtGSk8wRFg3Rmxyb0V5MEVaYWNOMmNyCg==" | base64 -d) 
+api_key="apiKey" 
 # Program
 
 function main(){
