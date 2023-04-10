@@ -13,7 +13,7 @@ openai.api_key = api_key
 # Ctrl + c 
 
 def ctrl_c(frame, sig):
-    print("\n\n\t[!] Saliendo...")
+    print("\n\n\n\n\t[!] Saliendo...\n\n")
     sys.exit(1)
 
 signal.signal(signal.SIGINT, ctrl_c)
@@ -28,7 +28,7 @@ def main():
         userQuestion=input("\n\t[!] Consulta: ")
         messages.append({"role": "user", "content": userQuestion})
         response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages)
-        print(f"\n\n\t{response.choices[0].message.content}")
+        print(f"\n\n\t{response.choices[0].message.content}\n\n")
 
 
 if __name__ == "__main__":
