@@ -12,8 +12,8 @@ grayColour="\e[0;37m\033[1m"
 
 # Help 
 function help(){
-	echo -e "\n\n\t[!] Uso $0 {target_ip}"
-	echo -e "\tExample --> $0 192.168.1.36/24"
+	echo -e "\n\n\t${redColour}[!]${endColour} ${grayColour}Uso:${endColour} ${purpleColour}$0${endColour} ${yellowColour}{target_ip}/{bits}${endColour}"
+	echo -e "\t${grayColour}Example${endColour} ${yellowColour}-->${endColour} ${purpleColour}$0${endColour} ${yellowColour}192.168.1.36/24${endColour}\n\n"
 	exit 0  
 }
 
@@ -24,6 +24,9 @@ function main(){
   cidr=$(echo $ip | /usr/bin/tr "/" " " | /usr/bin/awk '{print $2}')
   maxbits=32
   exist=$(/bin/which ipcalc)
+  if [ ! $ip ]; then 
+	  help
+  fi
   if [ ! $exist ]; then
 	if [[ $EUID -ne 0 ]]; then 
 	  echo -e "\n\n\t${redColour}Necesita ejecutarse como sudo :)${endColour}\n\n" 
